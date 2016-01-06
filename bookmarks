@@ -1,0 +1,15 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("def cell rend"
+ (filename . "~/projects/clojure/qg/src/qg/core.cljs")
+ (front-context-string . "(defn deflt-cell")
+ (rear-context-string . "acro\"\n  [q ]))\n\n")
+ (position . 1892))
+("paint"
+ (filename . "~/projects/clojure/qg/src/qg/core.cljs")
+ (front-context-string . "    (loop [mtrx ")
+ (rear-context-string . "50 500])\n\n\n    \n")
+ (position . 2920))
+)
