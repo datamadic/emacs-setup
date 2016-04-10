@@ -4,17 +4,23 @@
 (setq mc/cmds-to-run-for-all
       '(
 				indent-region
+				isearch-abort
 				))
 
 (setq mc/cmds-to-run-once
       '(
 				beginning-of-buffer
 				comment-dwim
+				end-of-buffer
 				find-file
 				forward-sentence
+				isearch-forward-symbol-at-point
+				kill-region
+				make-frame
 				mark-whole-buffer
 				mode-line-previous-buffer
 				mouse-drag-mode-line
 				mouse-minor-mode-menu
 				mouse-select-window
+				projectile-find-file
 				))

@@ -135,8 +135,10 @@
 (add-to-list 'load-path "~/.emacs.d/emmet-mode")
 (require 'emmet-mode)
 
-;(setq-default indent-tabs-mode t)
-(setq-default tab-width 2)
+; (setq-default indent-tabs-mode t)
+; (setq-default tab-width 2)
+;(setq-default fill-colum 80)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 
 ;(add-to-list 'load-path "~/.emacs.d/config")
@@ -146,7 +148,9 @@
 (autoload 'linum-mode "linum" "toggle line numbers on/off" t) 
 (global-set-key (kbd "C-<f5>") 'linum-mode)  
 
-(global-linum-mode t)
+(global-linum-mode -1)
+
+
 
 ; i just did this... 
 ;(setq tab-stop-list (number-sequence 4 200 4))
@@ -195,13 +199,39 @@
 (global-set-key (kbd "C-.") 'forward-paragraph)
 (global-set-key (kbd "C-,") 'backward-paragraph)
 
+
+;; set nagivation near to the home row 
 (global-set-key (kbd "H-;") 'forward-paragraph)
 (global-set-key (kbd "H-j") 'backward-paragraph)
+(global-set-key (kbd "H-k") 'previous-line)
+(global-set-key (kbd "H-l") 'next-line)
+(global-set-key (kbd "H-o") 'forward-word)
+(global-set-key (kbd "H-i") 'backward-word)
+(global-set-key (kbd "M-o") 'forward-char)
+(global-set-key (kbd "M-i") 'backward-char)
+
+(global-set-key (kbd "M-l") 'goto-line)
+
+
+;(global-set-key (kbd "H-") ')
+
+;previous-line
+;next-line
+;forward-char
+;backward-char
+;forward-word
+;backward-word
+
+
+(global-set-key (kbd "H-[") 'delete-indentation)
+(global-set-key (kbd "H-h") 'isearch-forward-symbol-at-point)
+
 
 (global-set-key (kbd "H-k") 'neotree)
 (global-set-key (kbd "H-K") 'neotree-hide)
 (global-set-key (kbd "H-b") 'switch-to-buffer)
-(global-set-key (kbd "H-p") 'list-buffers)
+
+; (global-set-key (kbd "H-p") 'list-buffers)
 (global-set-key (kbd "H-/") 'indent-region)
 (global-set-key (kbd "H-<left>") 'back-to-indentation)
 
@@ -305,24 +335,7 @@
 ;;       (cons '("\\.m$" . octave-mode) auto-mode-alist))
 
 (package-install 'smartscan)
-;; (custom-set-variables
-;;  ;; custom-set-variables was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  ;; '(coffee-tab-width 2)
-;; ;;  '(custom-safe-themes
-;; ;;    (quote
-;; ;;     ("18aa799ae149ceed4e337310319ad612b4f2526f058f8fd8ee00b8d8d79ed678" default)))
-;; ;;  '(send-mail-function (quote smtpmail-send-it))
-;; ;;  '(smtpmail-smtp-server "smtp.gmail.com")
-;; ;;  '(smtpmail-smtp-service 25))
-;; ;; (custom-set-faces
-;;  ;; custom-set-faces was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  )
+
 
 
 ;; use web-mode for .jsx files
@@ -444,3 +457,16 @@
 	(moz-minor-mode 1))
 
 (add-hook 'javascript-mode-hook 'javascript-custom-setup)
+
+; turn on projectile mode all the time 
+(projectile-global-mode)
+
+(global-set-key (kbd "H-p") 'projectile-find-file)
+;; (global-set-key (kbd "H-i") 'pop-global-mark) 
+
+
+;; be able to edit text areas in emacs
+;; http://wikemacs.org/wiki/Edit_with_Emacs
+(add-to-list 'load-path "~/.emacs.d/edit-server")
+(require 'edit-server)
+(edit-server-start)

@@ -2,9 +2,15 @@
 ;; Automatically generated file!!! DO NOT EDIT!!!
 
 (setq url-cookie-storage
- '((".google.com"
-  [url-cookie "NID" "75=nGdjoji-o-16JrJqehGCdddATYAV6R99q-SeqtETqr1sCaRb38pGyneBmUd9OBt8G2jAO4hlQvMwqrczT1QJHctiMvaZfcHLS9ZSTskHTx8_UMhmy1tuZEzaDTb6svasMCZ6hGFeAjEISwBxmacfdvnC" "05-Jul-2016 18:43:35.00 GMT" "/" ".google.com" nil]
-  [url-cookie "HttpOnly" nil "05-Jul-2016 18:43:35.00 GMT" "/" ".google.com" nil]))
+ '((".ycombinator.com"
+	[url-cookie "__cfduid" "da71533e5b1c4def6a206d01a1d811be21459626200" "02 Apr 17 19:43:20 [GMT]" "/" ".ycombinator.com" nil]
+	[url-cookie "HttpOnly" nil "02 Apr 17 19:43:20 [GMT]" "/" ".ycombinator.com" nil])
+ (".nytimes.com"
+	[url-cookie "RMID" "007f010130a95700217b000a" "Sun, 02 Apr 2017 19:46:03 UTC" "/" ".nytimes.com" nil]
+	[url-cookie "NYT-S" "0MPfF5c8nIM93DXrmvxADeHCh.lCzj.jIHdeFz9JchiAIUFL2BEX5FWcV.Ynx4rkFI" "02-May-2016 19:46:03.00 GMT" "/" ".nytimes.com" nil])
+ (".google.com"
+	[url-cookie "HttpOnly" nil "05-Jul-2016 18:43:35.00 GMT" "/" ".google.com" nil]
+	[url-cookie "NID" "75=nGdjoji-o-16JrJqehGCdddATYAV6R99q-SeqtETqr1sCaRb38pGyneBmUd9OBt8G2jAO4hlQvMwqrczT1QJHctiMvaZfcHLS9ZSTskHTx8_UMhmy1tuZEzaDTb6svasMCZ6hGFeAjEISwBxmacfdvnC" "05-Jul-2016 18:43:35.00 GMT" "/" ".google.com" nil]))
 )
 (setq url-cookie-secure-storage
  'nil)
