@@ -60,7 +60,7 @@
 ;;     projectile
 
 ;;     ;; colorful parenthesis matching
-;;     rainbow-delimiters
+     rainbow-delimiters
 
 ;;     ;; edit html tags like sexps
 ;;     tagedit
@@ -470,3 +470,45 @@
 (add-to-list 'load-path "~/.emacs.d/edit-server")
 (require 'edit-server)
 (edit-server-start)
+
+
+
+;; set nagivation near to the home row 
+(global-set-key (kbd "H-;") 'forward-paragraph)
+(global-set-key (kbd "H-j") 'backward-paragraph)
+(global-set-key (kbd "H-k") 'previous-line)
+(global-set-key (kbd "H-l") 'next-line)
+(global-set-key (kbd "H-o") 'forward-word)
+(global-set-key (kbd "H-i") 'backward-word)
+(global-set-key (kbd "M-o") 'forward-char)
+(global-set-key (kbd "M-i") 'backward-char)
+
+(global-set-key (kbd "M-l") 'goto-line)
+
+
+(setq lexical-let 1)
+
+
+(defun backupgen ()
+	(let ((last nil))
+		(lambda ()
+			(interactive)
+			(if (eq nil last)
+					(progn
+						(setq last 1) ; local binding 
+						(forward-paragraph))
+				(progn
+					(setq last nil) ; local binding 
+					(backward-paragraph)))
+																				; (setq last forward-paragraph)
+			
+			;; (set last (cond 
+			;; 					 (eq last 'backward-paragraph)
+			;; 					 'forward-paragraph
+			;; 					 'backward-paragraph))
+																				;(forward-paragraph)
+			)))
+
+(setq backup (backupgen))
+
+(global-set-key (kbd "H-8") backup)
