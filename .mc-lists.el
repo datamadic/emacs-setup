@@ -3,17 +3,21 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+				indent-for-tab-command
 				indent-region
 				isearch-abort
+				org-self-insert-command
 				))
 
 (setq mc/cmds-to-run-once
       '(
 				beginning-of-buffer
 				comment-dwim
+				electric-pair-delete-pair
 				end-of-buffer
 				find-file
 				forward-sentence
+				goto-line
 				isearch-forward-symbol-at-point
 				kill-region
 				make-frame
@@ -22,5 +26,6 @@
 				mouse-drag-mode-line
 				mouse-minor-mode-menu
 				mouse-select-window
+				moz-send-region
 				projectile-find-file
 				))
