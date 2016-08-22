@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+				electric-newline-and-maybe-indent
 				indent-for-tab-command
 				indent-region
 				isearch-abort
@@ -28,4 +29,5 @@
 				mouse-select-window
 				moz-send-region
 				projectile-find-file
+				switch-to-buffer
 				))
